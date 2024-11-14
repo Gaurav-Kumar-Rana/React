@@ -1,0 +1,38 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "\"My React project\"",
+  "main": "index.html",
+  "scripts": {
+    "build": "webpack",
+    "test": "jest",
+    "dev": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gaurav-Kumar-Rana/React.git"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author": "Gaurav Kumar rana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gaurav-Kumar-Rana/React/issues"
+  },
+  "homepage": "https://github.com/Gaurav-Kumar-Rana/React#readme",
+  "dependencies": {
+    "react": "^18.3.1"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "babel-loader": "^9.2.1"
+  }
+}
