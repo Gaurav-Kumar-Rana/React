@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { editeSkill, clearSkill } from "../utils/userSlice";
 
 const Skill = () => {
+  const [userSkill, adduserSkill] = useState("");
   const skillsFromStore = useSelector((state) => state.user.skill);
   const dispatch = useDispatch();
-  const [userSkill, adduserSkill] = useState("");
   const handleChangeSkill = (value) => {
     adduserSkill(value);
   };

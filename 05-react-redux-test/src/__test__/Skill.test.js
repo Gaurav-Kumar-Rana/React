@@ -3,11 +3,16 @@ import Loading from "../components/Loading";
 import "@testing-library/jest-dom";
 import { Provider } from "react-redux";
 import appStore from "../utils/appStore";
+import Skill from "../components/Skill";
 
 describe("Skill Module testing", () => {
   test("Should have skill test box", () => {
-    render(<Loading />);
-    const heading = screen.getByRole("heading");
-    expect(heading).toBeInTheDocument();
+    render(
+      <Provider store={appStore}>
+        <Skill />
+      </Provider>
+    );
+    const textBox = screen.getByRole("textbox");
+    expect(textBox).toBeInTheDocument();
   });
 });
