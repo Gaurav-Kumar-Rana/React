@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "name": "Laptop",
+    "type": "Electronics",
+    "quantity": 10,
+    "status": true,
+    "item_details": "Intel core i5",
+    "addded_date": "2022-01-01",
+    "updat_by": "2024-01-01"
+  },
+  {
+    "id": "2",
+    "name": "Dell Monitor",
+    "type": "Electronics",
+    "quantity": 22,
+    "status": false,
+    "item_details": "Intel core i5",
+    "addded_date": "2022-01-01",
+    "updat_by": "2024-01-01"
+  },
+  {
+    "id": "3",
+    "name": "Dell Mouse",
+    "type": "Electronics",
+    "quantity": 24,
+    "status": false,
+    "item_details": "Intel core i5",
+    "addded_date": "2022-01-01",
+    "updat_by": "2024-01-01"
+  },
+  {
+    "id": "4",
+    "name": "Dell Keyboard",
+    "type": "Electronics",
+    "quantity": 52,
+    "status": false,
+    "item_details": "Intel core i5",
+    "addded_date": "2022-01-01",
+    "updat_by": "2024-01-01"
+  }
+]
