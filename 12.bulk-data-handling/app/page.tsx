@@ -8,8 +8,8 @@ export default function Home() {
     <main className="w-95 p-4 m-4 h-screen">
       {/* <ClientSideTable /> */}
       {/* <ServerSideTable /> */}
-      {/* <PaginationTable /> */}
-      <InfiniteScrollTable />
+      <PaginationTable />
+      {/* <InfiniteScrollTable /> */}
     </main>
   );
 }

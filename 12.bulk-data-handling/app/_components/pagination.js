@@ -1,9 +1,10 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
+
 function PaginationTable() {
   const perPageSet = 10;
-  let totalPages = useRef(0);
-  let displayData = useRef([]);
+  const totalPages = useRef(0);
+  const displayData = useRef([]);
   const [apiData, setApiData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -11,39 +12,41 @@ function PaginationTable() {
     async function fetchData() {
       const data = await fetch("https://jsonplaceholder.typicode.com/photos");
       const result = await data.json();
-      displayData.current = result.slice(0, perPageSet * currentPage);
       totalPages.current = Math.ceil(result.length / perPageSet);
+      displayData.current = result.slice(
+        perPageSet * (currentPage - 1),
+        perPageSet * currentPage
+      );
       setApiData(result);
     }
     fetchData();
   }, []);
 
-  const handlePrevious = () => {
-    setCurrentPage((currentPage) => currentPage - 1);
+  useEffect(() => {
     displayData.current = apiData.slice(
       perPageSet * (currentPage - 1),
       perPageSet * currentPage
     );
+  }, [apiData, currentPage]);
+
+  const handlePrevious = () => {
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
   };
 
   const handleNext = () => {
-    setCurrentPage((currentPage) => currentPage + 1);
-    displayData.current = apiData.slice(
-      perPageSet * currentPage,
-      perPageSet * (currentPage + 1)
-    );
+    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages.current));
   };
-  console.log(currentPage);
+
   return (
     <>
       <h1 className="w-full mb-10">
-        List of pictures via clent side rendering and pagination
+        List of pictures via client side rendering and pagination
       </h1>
       <div className="action flex justify-between">
         <button
           className="p-2 bg-emerald-300 text-black"
           onClick={handlePrevious}
-          disabled={currentPage == 1}
+          disabled={currentPage === 1}
         >
           Previous
         </button>
@@ -53,8 +56,7 @@ function PaginationTable() {
         <button
           className="p-2 bg-emerald-300 text-blacks"
           onClick={handleNext}
-          disabled={currentPage == totalPages.current}
-          id="aaa"
+          disabled={currentPage === totalPages.current}
         >
           Next
         </button>
